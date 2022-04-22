@@ -8,7 +8,7 @@ int main(){
 	int n, count = 0;
 	cin >> n;
 	
-	// get prime numbers (use Q.009's logic) 
+	// get prime numbers (use 009.cpp's logic) 
 	for(int i = 1; i <= n; i++)
 		for(int j = 0; j <= n; j=j+i)
 			arr[j]++;
