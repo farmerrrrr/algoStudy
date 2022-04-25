@@ -7,13 +7,13 @@ int check(int n, int m){
 	int cnt = 0;
 	
 	while(1){
-			if(n % m == 0){
-				cnt++;
-				n /= m;
-			}
-			else
-				break;
+		if(n % m == 0){
+			cnt++;
+			n /= m;
 		}
+		else
+			break;
+	}
 	
 	return cnt;
 }
