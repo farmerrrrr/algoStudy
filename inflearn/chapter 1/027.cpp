@@ -4,8 +4,7 @@ using namespace std;
 
 int main(){
 	
-	int n, pos = 1, j;
-	bool flag = true;
+	int n, j;
 	int cnt[1001] = {0,};
 	cin >> n;
 	
