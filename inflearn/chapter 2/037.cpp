@@ -4,46 +4,37 @@ using namespace std;
 
 int main(){
 	
-	int n, m, tmp, idx, cnt = 0, k;
+	int n, m, idx = 0,;
 	bool flag = 0;
 	int task[1000], b[10] = {0, };
+	
 	cin >> n >> m;
 	for(int i = 0; i < m; i++)
 		cin >> task[i];
-		
-//	b[0] = task[cnt++];
 
 	for(int i = 0; i < m; i++){
-		if(task[i] == b[0])
-			continue;
-			
+		flag = 0;
+	
 		// is cache hit?
-		for(int j = 1; j < cnt; j++){
+		for(int j = 0; j < n; j++){
 			if(task[i] == b[j]){
 				flag = 1;
 				idx = j;
 			}
 		}
 		
-		if(flag == 0 && cnt < n)
-			cnt++;
-			
-		k = idx+1;
-		
-		while(k > 0){
-			b[k] = b[k-1];
-			k--;
-		}
-		
-		b[0] = task[i];
-		idx = cnt;
-		flag = 0;
+		if(flag == 0)
+			for(int k = n-1; k > 0; k--)
+				b[k] = b[k-1];
+		else
+			for(int k = idx; k > 0; k--)
+				b[k] = b[k-1];
+				
+		b[0] = task[i];	
 	}
 
-	for(int i = 0; i < cnt; i++)
+	for(int i = 0; i < n; i++)
 		cout << b[i] << " ";
-	for(int i = cnt; i < n; i++)
-		cout << "0 ";
 		
 	return 0;
 }
