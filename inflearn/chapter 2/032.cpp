@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 	
-	int n;
+	int n, idx;
 	int a[100];
 	cin >> n;
 	
@@ -12,7 +12,7 @@ int main(){
 		cin >> a[i];
 	
 	for(int i = 0; i < n; i++){
-		int idx = i;
+		idx = i;
 		for(int j = i+1; j < n; j++)
 			if(a[idx] > a[j])
 				idx = j;
